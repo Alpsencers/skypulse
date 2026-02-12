@@ -2,14 +2,21 @@
 # SKYPULSE v3.0 - Hava Durumu Web Uygulaması
 # ============================================
 
+# ============================================
+# SKYPULSE v3.0 - Hava Durumu Web Uygulaması
+# ============================================
+
 from flask import Flask, render_template, request, jsonify, make_response
 import requests
 import json
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
 
-API_KEY = "dbf78f4f1221331c540dafbe83e0c60d"
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
 BASE_URL = "https://api.openweathermap.org/data/2.5"
 
 
